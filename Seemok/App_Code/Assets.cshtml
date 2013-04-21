@@ -1,0 +1,15 @@
+﻿@helper Script(string scriptFile)
+{
+    var href = @URL.SiteRoot() + "/assets/js/" + @scriptFile;
+    <script src="@href" type="text/javascript" ></script>
+}
+@helper CSS(string cssFile, string media = "screen")
+{
+    var href = @URL.SiteRoot() + "/assets/css/" + @cssFile;
+    <link href="@href" rel="stylesheet" type="text/css" media="@media" /> 
+}
+@helper Image(string imageFile, string cssClass = "", string alt = "")
+{
+    var href = @URL.SiteRoot() + "/assets/img/" + @imageFile;
+    <img width="45" height="45" src = "@href" class="img @cssClass" alt="@alt"/>
+}

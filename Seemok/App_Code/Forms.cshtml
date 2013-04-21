@@ -1,0 +1,13 @@
+﻿@helper NavScript()
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.side-left .nav-menu li').click(function (e) {
+                console.log(e);
+                var self = $(this);
+                self.parent().children().removeClass('active');
+                self.addClass('active');
+            });
+        });
+    </script>
+}

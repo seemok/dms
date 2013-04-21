@@ -1,0 +1,65 @@
+﻿<div class="side-left">
+    <h5>Title Menu Demo</h5>
+    <ul class="nav-menu">
+        <li class="active">Demo 001 Demo 00</li>
+        <li>Demo 002 Demo 00</li>
+        <li>Demo 003 Demo 00</li>
+        <li>Demo 004 Demo 00</li>
+        <li>Demo 005 Demo 00</li>
+    </ul>
+</div>
+<div class="side-main">
+    <div class="btitle">
+        <label>Sample Input Form</label>
+        <div class="action">
+            <input type="button" value="Add Product" class="btn btn-small" />
+            <input type="button" value="Action" class="btn btn-small" />
+        </div>
+    </div>
+    <div class="bcontent">
+        <form class="form-horizontal">
+            <!--
+            <div class="control-group">
+                <label class="control-label" for="Field01">Field 01</label>
+                <div class="controls">
+                    <input type="text" id="Field01" placeholder="Field 01" />
+                </div>
+            </div>
+            -->
+            <div class="control-group">
+                <label class="control-label" for="Field02">Field 02 </label>
+                <div class="controls">
+                    <input type="text" id="Field02" placeholder="Field 02" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="Field01">Field 03</label>
+                <div class="controls">
+                    <input type="text" id="Field03" placeholder="Field 03" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="Field01">Field 04</label>
+                <div class="controls">
+                    <input type="text" id="Field04" placeholder="Field 04" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="Field01">Field 05</label>
+                <div class="controls">
+                    <input type="text" id="Field05" placeholder="Field 05" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    $().ready(function () {
+        $('.side-left .nav-menu li').click(function (e) {
+            console.log(e);
+            var self = $(this);
+            self.parent().children().removeClass('active');
+            self.addClass('active');
+        });
+    });
+</script>

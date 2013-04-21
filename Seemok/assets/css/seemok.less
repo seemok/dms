@@ -1,0 +1,234 @@
+﻿@baseColor: #666e73;
+@lightColor: #fff9e9;
+@import "mixins.less";
+
+body {
+    margin: 0;
+    font-family: arial;
+    font-size: 12px;
+
+    #sgheader {
+        background-color: darken(@baseColor, 20%);
+        height: 70px;
+
+        &.showhinfo {
+            .transition(0.5s);
+            height: 96px;
+        }
+
+        .htitle {
+            font-size: 26px;
+            color: lighten(@baseColor, 60%);
+            margin: 0;
+            padding: 8px 30px;
+            border-bottom: 1px solid lighten(@baseColor, 0%);
+        }
+
+        .huserinfo {
+            color: lighten(@baseColor, 60%);
+            float: right;
+            margin: 3px 30px;
+            font-weight: bold;
+            font-size: 11px;
+
+            a {
+                text-decoration: none;
+                cursor: pointer;
+                color: darken(@lightColor, 20%);
+            }
+        }
+
+        .hmenu {
+            border-top: 1px solid darken(@baseColor, 20%);
+            border-bottom: 1px solid darken(@baseColor, 20%);
+            background-color: lighten(@baseColor, 0%);
+            padding: 0;
+
+            ul {
+                margin: 0;
+                padding: 6px 15px 5px;
+                display: inline-block;
+
+                li {
+                    display: inline-block;
+                    padding: 0 15px 0 0;
+
+                    a {
+                        color: lighten(@baseColor, 60%);
+                        text-decoration: none;
+
+                        &.active {
+							font-weight: bold;
+							color: lighten(@lightColor, -10%);
+                        }
+                    }
+                }
+            }
+        }
+
+        .hinfo {
+            border-bottom: 1px solid darken(@lightColor, 10%);
+            background-color: @lightColor;
+            height: 22px;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 3px 30px 0;
+            display: none;
+        }
+    }
+
+    #sgbody {
+        padding: 15px 30px;
+
+        .btitle {
+            border-bottom: 4px solid lighten(@baseColor, 44%);
+            padding: 5px 0 0;
+
+            label {
+                margin: 0;
+                padding: 0;
+                font-size: 16px;
+                font-weight: bold;
+                color: darken(@lightColor, 55%);
+            }
+
+            .action {
+                float: right;
+                margin: -24px 0 0 0;
+
+                .btn-small {
+                    padding: 2px 10px;
+                }
+            }
+        }
+
+        .bcontent {
+            margin: 10px 0;
+
+            table {
+                th {
+                    padding: 3px 10px;
+                    .border-radius(0);
+                }
+
+                td {
+                    padding: 2.5px 10px;
+                    .border-radius(0);
+                }
+            }
+
+            .table-bordered {
+                .border-radius(0);
+            }
+
+            form {
+                &.form-horizontal {
+                    .control-group {
+                        margin-bottom: 5px;
+
+                        label {
+                            margin: 0px;
+                            text-align: left;
+                            font-size: 13px;
+                        }
+
+                        .controls {
+                            margin-left: 120px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .side-left {
+            float: left;
+            width: 216px;
+            min-height: 500px;
+            margin-top: 5px;
+            background-color: lighten(@baseColor, 50%);
+            border: 1px solid lighten(@baseColor, 30%);
+            border-top: 4px solid lighten(@baseColor, 30%);
+            border-bottom: 4px solid lighten(@baseColor, 30%);
+
+            h5 {
+                margin: 0;
+                font-size: 15px;
+                padding: 7px 20px 8px;
+                color: darken(@baseColor, 10%);
+                background-color: lighten(@baseColor, 55%);
+                border-bottom: 1px solid lighten(@baseColor, 30%);
+            }
+
+            ul {
+                margin: 0;
+                padding: 0;
+
+                li {
+                    display: block;
+                    margin: 0;
+                    padding: 5px 20px;
+                    border-bottom: 1px solid lighten(@baseColor, 30%);
+                    font-size: 12px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: lighten(@lightColor, 0%);
+                    }
+
+                    &.active {
+                        left: 10px;
+                        padding: 5px 17px;
+                        display: inline-block;
+                        background-color: white;
+                        border-left: 3px solid lighten(@baseColor, 30%);
+                        border-right: 1px solid lighten(@baseColor, 100%);
+                        font-size: 12px;
+                        width: 180px;
+                    }
+                }
+            }
+        }
+
+        .side-main {
+            margin-left: 240px;
+            min-height: 400px;
+
+            .form-horizontal {
+                .control-group {
+                    margin-bottom: 5px;
+
+                    &:after {
+                        clear: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+    display: inline-block;
+    padding: 3px 6px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #555555;
+    vertical-align: middle;
+    width: 500px;
+    .border-radius(2px);
+}
