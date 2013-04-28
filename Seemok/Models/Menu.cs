@@ -16,8 +16,6 @@ namespace Seemok.Models
         public string MenuHeader { get; set; }
         public int MenuIndex { get; set; }
         public string MenuIcon { get; set; }
-        public string MenuAction { get; set; }
-        public string MenuController { get; set; }
-        public string MenuArea { get; set; }
+        public string MenuUrl { get; set; }
     }
 }

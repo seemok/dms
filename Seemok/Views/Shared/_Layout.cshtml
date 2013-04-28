@@ -2,28 +2,57 @@
 
 <html>
 <head>
-    <title>Index</title>
-    @Assets.Script("jquery-1.9.1.min.js")
-    @Assets.Script("angular.min.js")
+    <title>@ViewBag.Title</title>
+    @Assets.Script("jquery-1.7.2.min.js")
+    @Assets.Script("telerik.common.min.js")
+    @Assets.Script("telerik.grid.min.js")
+    @Assets.Script("telerik.grid.reordering.min.js")
+    @Assets.Script("telerik.grid.grouping.min.js")
+    @Assets.Script("telerik.grid.filtering.min.js")
 </head>
 <body>
     <div id="sgheader">
-        <div class="huserinfo">Logged as admin | @DateTime.Now.ToLongDateString() | <a>Log Out</a></div>
+        <div class="huserinfo">
+            Logged as <span data-bind="text: userlogin"></span>
+            | 
+            @DateTime.Now.ToLongDateString()
+            | 
+            <a>Log Out</a>
+        </div>
         <div class="htitle">Seemok Dev</div>
         <div class="hmenu">
-            <ul><li><a href="#"></a></li></ul>
+            <ul data-bind="foreach: menus">
+                <li><a data-bind="attr: { href: MenuUrl, title: MenuName }, text: MenuName"></a></li>
+            </ul>
         </div>
         <div class="hinfo">One or more of the Indexes are not up to date: Click <a href="#">here</a> to go to Index Management and rebuild required indexes.</div>
     </div>
     <div id="sgbody">
-        @RenderBody()
+        <div class="side-left">
+            <h5>Menu @ViewBag.Title</h5>
+            <ul class="nav-menu" data-bind="foreach: navlist">
+                <li data-bind="attr: { class: MenuId, url: MenuUrl }, click: seemok.vm.navclick, text: MenuName"></li>
+            </ul>
+        </div>
+        <div class="side-main">
+            <div class="bcontent">
+                <div class="alert alert-success"></div>
+                <div class="alert alert-error"></div>
+                <form class="form-horizontal" id="formMain">
+                    @RenderBody()
+                </form>
+            </div>
+        </div>
     </div>
     <div id="sgfooter">
     </div>
 </body>
 </html>
 @Assets.CSS("bootstrap.min.css")
+@Assets.CSS("telerik.min.css")
 @Assets.CSS("seemok.min.css")
 @Assets.Script("jquery.hashable.js")
 @Assets.Script("knockout-2.2.1.js")
 @Assets.Script("seemok.core.js")
+@Assets.Script("seemok.form.js")
+

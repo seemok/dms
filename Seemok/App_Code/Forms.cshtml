@@ -1,13 +1,46 @@
-﻿@helper NavScript()
+﻿@helper Script(string script = "")
+{
+    @Assets.Script("apps/" + @script + ".js")
+}
+@helper ScriptNav(string menu = "")
 {
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('.side-left .nav-menu li').click(function (e) {
-                console.log(e);
-                var self = $(this);
-                self.parent().children().removeClass('active');
-                self.addClass('active');
-            });
-        });
+        $(document).ready(function () { seemok.sidebar("@menu"); });
     </script>
+}
+@helper Toolbar(string title, params Seemok.Models.Button[] buttons)
+{
+    <div class="btitle">
+        <label>@title</label>
+        <div class="action">
+            @foreach (var button in buttons)
+            {
+                <input type="button" id="@button.Id" value="@button.Caption" class="btn btn-small" />
+            }
+        </div>
+    </div>
+}
+@helper Subtitle(string title)
+{
+    <div class="subtitle">
+        <label>@title</label>
+    </div>
+}
+@helper TextBox(string name, string caption, string className = "span6")
+{
+    <div class="control-group">
+        <label class="control-label" for="@name">@caption</label>
+        <div class="controls">
+            <input type="text" name="@name" data-bind="value:@name" class="@className" placeholder="@caption"/>
+        </div>
+    </div>
+}
+@helper TextBoxReadonly(string name, string caption, string className = "span6")
+{
+    <div class="control-group">
+        <label class="control-label" for="@name">@caption</label>
+        <div class="controls">
+            <input type="text" name="@name" data-bind="value:@name" class="@className" placeholder="@caption" readonly="readonly"/>
+        </div>
+    </div>
 }

@@ -11,22 +11,12 @@ namespace Seemok.Controllers
         public ActionResult Index()
         {
             //return View();
-            return RedirectToAction("Dashboard");
+            return RedirectToAction("service");
         }
 
-        public PartialViewResult Grid()
+        public PartialViewResult Settings()
         {
             return PartialView();
-        }
-
-        public PartialViewResult Form()
-        {
-            return PartialView();
-        }
-
-        public ActionResult Menu()
-        {
-            return View();
         }
 
         public ActionResult Dashboard()
@@ -39,17 +29,7 @@ namespace Seemok.Controllers
             return View();
         }
 
-        public ActionResult Process()
-        {
-            return View();
-        }
-
-        public ActionResult Monitor()
-        {
-            return View();
-        }
-
-        public ActionResult Report()
+        public ActionResult Service()
         {
             return View();
         }

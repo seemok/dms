@@ -98,16 +98,21 @@
     <Compile Include="Controllers\DbController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
+    <Compile Include="Controllers\SeemokAreaRegistration.cs" />
+    <Compile Include="Controllers\Service\JobOrderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Button.cs" />
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\mixins.css" />
     <Content Include="assets\css\mixins.less" />
+    <Content Include="assets\css\mixins.min.css" />
     <Content Include="assets\css\seemok.css">
       <DependentUpon>seemok.less</DependentUpon>
     </Content>
@@ -115,12 +120,41 @@
     <Content Include="assets\css\seemok.min.css">
       <DependentUpon>seemok.less</DependentUpon>
     </Content>
+    <Content Include="assets\css\telerik.common.css" />
+    <Content Include="assets\css\telerik.common.less" />
+    <Content Include="assets\css\telerik.common.min.css" />
+    <Content Include="assets\css\telerik.css" />
+    <Content Include="assets\css\telerik.grid.css" />
+    <Content Include="assets\css\telerik.grid.less" />
+    <Content Include="assets\css\telerik.grid.min.css" />
+    <Content Include="assets\css\telerik.less" />
+    <Content Include="assets\css\telerik.min.css" />
+    <Content Include="assets\img\t-grid\editor.png" />
+    <Content Include="assets\img\t-grid\imagebrowser.png" />
+    <Content Include="assets\img\t-grid\loading.gif" />
+    <Content Include="assets\img\t-grid\slider-h.gif" />
+    <Content Include="assets\img\t-grid\slider-v.gif" />
+    <Content Include="assets\img\t-grid\sprite-vertical.png" />
+    <Content Include="assets\img\t-grid\sprite.png" />
     <Content Include="assets\js\angular.min.js" />
+    <Content Include="assets\js\apps\assesment.js" />
+    <Content Include="assets\js\apps\branch.js" />
+    <Content Include="assets\js\apps\riskcomp.js" />
+    <Content Include="assets\js\apps\risktype.js" />
+    <Content Include="assets\js\apps\settings.js" />
+    <Content Include="assets\js\jquery-1.7.2.min.js" />
     <Content Include="assets\js\jquery-1.9.1.min.js" />
     <Content Include="assets\js\jquery.hashable.js" />
     <Content Include="assets\js\knockout-2.2.1.js" />
+    <Content Include="assets\js\seemok.form.js" />
     <Content Include="assets\js\seemok.core.js" />
-    <Content Include="assets\js\seemok.js" />
+    <Content Include="assets\js\telerik.common.min.js" />
+    <Content Include="assets\js\telerik.grid.editing.min.js" />
+    <Content Include="assets\js\telerik.grid.filtering.min.js" />
+    <Content Include="assets\js\telerik.grid.grouping.min.js" />
+    <Content Include="assets\js\telerik.grid.min.js" />
+    <Content Include="assets\js\telerik.grid.reordering.min.js" />
+    <Content Include="assets\js\telerik.grid.resizing.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -136,27 +170,30 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="assets\img\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Dashboard.cshtml" />
-    <Content Include="Views\Home\Form.cshtml" />
-    <Content Include="Views\Home\Grid.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Master.cshtml" />
-    <Content Include="Views\Home\Menu.cshtml" />
-    <Content Include="Views\Home\Monitor.cshtml" />
-    <Content Include="Views\Home\Process.cshtml" />
-    <Content Include="Views\Home\Report.cshtml" />
-    <Content Include="Views\Home\_Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Code\Assets.cshtml" />
     <Content Include="App_Code\Forms.cshtml" />
     <Content Include="App_Code\URL.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Dashboard.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Settings.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Service.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\seemok.pubxml" />
+    <Content Include="Views\Service\JobOrder\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

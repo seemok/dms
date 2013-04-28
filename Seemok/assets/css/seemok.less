@@ -2,6 +2,46 @@
 @lightColor: #fff9e9;
 @import "mixins.less";
 
+.t-header, .t-grid-header {
+    background: none;
+    background-color: #A6D9F4;
+    border-color: #A7BAC5;
+}
+
+.t-grid {
+    .t-state-selected {
+        background-color: lighten(@baseColor, 40%);
+    }
+
+    .t-state-focused {
+        background-color: lighten(@baseColor, 40%);
+    }
+
+    .t-filter-options {
+        .border-radius(0);
+
+        select {
+            width: 148px;
+            padding: 2px 2px 2px 4px;
+            line-height: 0;
+            height: 28px;
+            .border-radius(0);
+        }
+
+        input[type="text"] {
+            width: 134px;
+            padding: 2px 6px;
+            border-radius: 2px;
+            .border-radius(0);
+        }
+
+        .t-button {
+            .border-radius(0);
+            background: url("../img/t-grid/sprite.png") repeat-x scroll 0 -634px #A6D9F4;
+        }
+    }
+}
+
 body {
     margin: 0;
     font-family: arial;
@@ -46,8 +86,9 @@ body {
 
             ul {
                 margin: 0;
-                padding: 6px 15px 5px;
+                padding: 6px 30px 5px;
                 display: inline-block;
+                min-height: 14px;
 
                 li {
                     display: inline-block;
@@ -58,8 +99,8 @@ body {
                         text-decoration: none;
 
                         &.active {
-							font-weight: bold;
-							color: lighten(@lightColor, -10%);
+                            font-weight: bold;
+                            color: lighten(@lightColor, -10%);
                         }
                     }
                 }
@@ -82,7 +123,8 @@ body {
 
         .btitle {
             border-bottom: 4px solid lighten(@baseColor, 44%);
-            padding: 5px 0 0;
+            padding: 0;
+            margin: 0 0 8px 0;
 
             label {
                 margin: 0;
@@ -99,6 +141,20 @@ body {
                 .btn-small {
                     padding: 2px 10px;
                 }
+            }
+        }
+
+        .subtitle {
+            border-bottom: 2px solid darken(@baseColor, 0%);
+            padding: 0;
+            margin: 18px 0 10px 0;
+
+            label {
+                margin: 0;
+                padding: 0;
+                font-size: 13px;
+                font-weight: bold;
+                color: darken(@baseColor, 5%);
             }
         }
 
@@ -123,6 +179,8 @@ body {
 
             form {
                 &.form-horizontal {
+                    .transition(0.5s);
+
                     .control-group {
                         margin-bottom: 5px;
 
@@ -135,6 +193,15 @@ body {
                         .controls {
                             margin-left: 120px;
                         }
+                    }
+
+                    .form-list {
+                        margin: 0;
+                    }
+
+                    .form-detail {
+                        margin: 0;
+                        display: none;
                     }
                 }
             }
@@ -162,6 +229,7 @@ body {
             ul {
                 margin: 0;
                 padding: 0;
+                .transition(0.5s);
 
                 li {
                     display: block;
@@ -206,6 +274,10 @@ body {
     }
 }
 
+.alert {
+    display: none;
+}
+
 select,
 textarea,
 input[type="text"],
@@ -231,4 +303,5 @@ input[type="color"],
     vertical-align: middle;
     width: 500px;
     .border-radius(2px);
+    .placeholder(lighten(@baseColor, 40%));
 }

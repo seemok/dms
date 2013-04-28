@@ -23,12 +23,7 @@ namespace Seemok
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                "Default", // Route name
-                "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
-            );
-
+            routes.MapRoute("default", "{controller}/{action}/{id}", new { controller = "Home", action = "Index", id = UrlParameter.Optional });
         }
 
         protected void Application_Start()
@@ -40,6 +35,48 @@ namespace Seemok
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            ViewEngines.Engines.Clear();
+            ViewEngines.Engines.Add(new RazorCSharpViewEngine());
+        }
+    }
+
+    public class RazorCSharpViewEngine : RazorViewEngine
+    {
+        public RazorCSharpViewEngine()
+            : base()
+        {
+            ViewLocationFormats = new[] 
+            { 
+                "~/Views/{1}/{0}.cshtml"
+            };
+            MasterLocationFormats = new[] 
+            {
+                "~/Views/Shared/{0}.cshtml" 
+            };
+            PartialViewLocationFormats = new[] 
+            { 
+                "~/Views/{1}/{0}.cshtml", 
+                "~/Views/Shared/{0}.cshtml" 
+            };
+            AreaViewLocationFormats = new[] 
+            { 
+                "~/Views/{2}/{1}/{0}.cshtml"
+            };
+            AreaMasterLocationFormats = new[] 
+            { 
+                "~/Areas/{2}/Views/Shared/{0}.cshtml" 
+            };
+            AreaPartialViewLocationFormats = new[] 
+            { 
+                "~/Areas/{2}/Views/{1}/{0}.cshtml"
+            };
+            //AreaViewLocationFormats = new[] { "~/Areas/{2}/Views/{1}/{0}.cshtml", "~/Areas/{2}/Views/Shared/{0}.cshtml" };
+            //AreaMasterLocationFormats = new[] { "~/Areas/{2}/Views/{1}/{0}.cshtml", "~/Areas/{2}/Views/Shared/{0}.cshtml" };
+            //AreaPartialViewLocationFormats = new[] { "~/Areas/{2}/Views/{1}/{0}.cshtml", "~/Areas/{2}/Views/Shared/{0}.cshtml" };
+            //ViewLocationFormats = new[] { "~/Views/{1}/{0}.cshtml", "~/Views/Shared/{0}.cshtml" };
+            //MasterLocationFormats = new[] { "~/Views/{1}/{0}.cshtml", "~/Views/Shared/{0}.cshtml" };
+            //PartialViewLocationFormats = new[] { "~/Views/{1}/{0}.cshtml", "~/Views/Shared/{0}.cshtml" };
         }
     }
 }

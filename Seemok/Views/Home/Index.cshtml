@@ -1,40 +1,4 @@
 ﻿@{
-    Layout = null;
+    ViewBag.Title = "Data Master";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>Index</title>
-</head>
-<body>
-    <div id="sgheader">
-        <div class="huserinfo">Logged as admin | @DateTime.Now.ToLongDateString() | <a>Log Out</a></div>
-        <div class="htitle">Risk Based Bank Rates</div>
-        <div class="hmenu">@Html.Partial("_Menu")</div>
-        <div class="hinfo">One or more of the Indexes are not up to date: Product Prices, Product Flat Data, Catalog Search Index. Click here to go to Index Management and rebuild required indexes.</div>
-    </div>
-    <div id="sgbody">
-    </div>
-    <div id="sgfooter">
-    </div>
-</body>
-</html>
-@Assets.CSS("bootstrap.min.css")
-@Assets.CSS("seego.min.css")
-@Assets.Script("jquery-1.9.1.min.js")
-@Assets.Script("jquery.hashable.js")
-@Assets.Script("knockout-2.2.1.js")
-<script type="text/javascript">
-    $(document).ready(function () {
-        $(window).hashChange(function (e) {
-            if (e == 'form') {
-                $('#sgbody').load('/home/form');
-            }
-            else {
-                $('#sgbody').load('/home/grid');
-            }
-        });
-    });
-</script>

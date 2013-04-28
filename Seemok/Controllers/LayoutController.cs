@@ -10,14 +10,27 @@ namespace Seemok.Controllers
     {
         public ActionResult MenuList()
         {
-            var list = ctx.Menus.OrderBy(p => p.MenuIndex).Select(p => new { p.MenuId, p.MenuName, p.MenuHeader, p.MenuArea, p.MenuController, p.MenuAction });
-            return Json(list.ToArray().Select(p => new
+            var list = ctx.Menus.Where(p => p.MenuHeader == "").OrderBy(p => p.MenuIndex).Select(p => new { p.MenuId, p.MenuName, p.MenuHeader, p.MenuUrl });
+            return Json(new { success = true, data = list.ToArray() });
+        }
+
+        public ActionResult NavList(string id)
+        {
+            var list = ctx.Menus.Where(p => p.MenuHeader == id).OrderBy(p => p.MenuIndex).Select(p => new { p.MenuId, p.MenuName, p.MenuHeader, p.MenuUrl });
+            return Json(new { success = true, data = list.ToArray() });
+        }
+
+        public ActionResult GetContent(string id)
+        {
+            var model = ctx.Menus.Find(id);
+            if (model != null)
             {
-                p.MenuId,
-                p.MenuName,
-                p.MenuHeader,
-                MenuUrl = (string.IsNullOrWhiteSpace(p.MenuArea)) ? string.Format("/{0}/{1}", p.MenuController, p.MenuAction) : string.Format("{0}/{1}/{2}", p.MenuArea, p.MenuController, p.MenuAction)
-            }));
+                return Json(new { success = true, data = model });
+            }
+            else
+            {
+                return Json(new { success = false, message = "object not found" });
+            }
         }
     }
 }
