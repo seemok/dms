@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Code/Assets.cshtml">
+      <publishTime>04/28/2013 17:39:03</publishTime>
+    </File>
+    <File Include="App_Code/Forms.cshtml">
+      <publishTime>04/28/2013 17:45:36</publishTime>
+    </File>
+    <File Include="App_Code/URL.cshtml">
+      <publishTime>04/28/2013 17:39:02</publishTime>
+    </File>
+    <File Include="assets/css/bootstrap.min.css">
+      <publishTime>04/28/2013 17:39:20</publishTime>
+    </File>
+    <File Include="assets/css/mixins.css">
+      <publishTime>04/28/2013 17:39:20</publishTime>
+    </File>
+    <File Include="assets/css/mixins.less">
+      <publishTime>04/28/2013 17:39:21</publishTime>
+    </File>
+    <File Include="assets/css/mixins.min.css">
+      <publishTime>04/28/2013 17:39:21</publishTime>
+    </File>
+    <File Include="assets/css/seemok.css">
+      <publishTime>04/28/2013 17:51:54</publishTime>
+    </File>
+    <File Include="assets/css/seemok.less">
+      <publishTime>04/28/2013 17:51:53</publishTime>
+    </File>
+    <File Include="assets/css/seemok.min.css">
+      <publishTime>04/28/2013 17:51:54</publishTime>
+    </File>
+    <File Include="assets/css/telerik.common.css">
+      <publishTime>04/28/2013 17:39:21</publishTime>
+    </File>
+    <File Include="assets/css/telerik.common.less">
+      <publishTime>04/28/2013 17:39:21</publishTime>
+    </File>
+    <File Include="assets/css/telerik.common.min.css">
+      <publishTime>04/28/2013 17:39:21</publishTime>
+    </File>
+    <File Include="assets/css/telerik.css">
+      <publishTime>04/28/2013 17:39:21</publishTime>
+    </File>
+    <File Include="assets/css/telerik.grid.css">
+      <publishTime>04/28/2013 17:39:21</publishTime>
+    </File>
+    <File Include="assets/css/telerik.grid.less">
+      <publishTime>04/28/2013 17:39:21</publishTime>
+    </File>
+    <File Include="assets/css/telerik.grid.min.css">
+      <publishTime>04/28/2013 17:39:21</publishTime>
+    </File>
+    <File Include="assets/css/telerik.less">
+      <publishTime>04/28/2013 17:39:21</publishTime>
+    </File>
+    <File Include="assets/css/telerik.min.css">
+      <publishTime>04/28/2013 17:39:21</publishTime>
+    </File>
+    <File Include="assets/img/t-grid/editor.png">
+      <publishTime>04/28/2013 17:39:21</publishTime>
+    </File>
+    <File Include="assets/img/t-grid/imagebrowser.png">
+      <publishTime>04/28/2013 17:39:21</publishTime>
+    </File>
+    <File Include="assets/img/t-grid/loading.gif">
+      <publishTime>04/28/2013 17:39:21</publishTime>
+    </File>
+    <File Include="assets/img/t-grid/slider-h.gif">
+      <publishTime>04/28/2013 17:39:21</publishTime>
+    </File>
+    <File Include="assets/img/t-grid/slider-v.gif">
+      <publishTime>04/28/2013 17:39:21</publishTime>
+    </File>
+    <File Include="assets/img/t-grid/sprite-vertical.png">
+      <publishTime>04/28/2013 17:39:21</publishTime>
+    </File>
+    <File Include="assets/img/t-grid/sprite.png">
+      <publishTime>04/28/2013 17:39:21</publishTime>
+    </File>
+    <File Include="assets/js/angular.min.js">
+      <publishTime>04/28/2013 17:39:23</publishTime>
+    </File>
+    <File Include="assets/js/apps/assesment.js">
+      <publishTime>04/28/2013 17:39:23</publishTime>
+    </File>
+    <File Include="assets/js/apps/branch.js">
+      <publishTime>04/28/2013 17:39:23</publishTime>
+    </File>
+    <File Include="assets/js/apps/riskcomp.js">
+      <publishTime>04/28/2013 17:39:23</publishTime>
+    </File>
+    <File Include="assets/js/apps/risktype.js">
+      <publishTime>04/28/2013 17:39:23</publishTime>
+    </File>
+    <File Include="assets/js/apps/settings.js">
+      <publishTime>04/28/2013 17:39:23</publishTime>
+    </File>
+    <File Include="assets/js/jquery-1.7.2.min.js">
+      <publishTime>04/28/2013 17:39:23</publishTime>
+    </File>
+    <File Include="assets/js/jquery-1.9.1.min.js">
+      <publishTime>04/28/2013 17:39:23</publishTime>
+    </File>
+    <File Include="assets/js/jquery.hashable.js">
+      <publishTime>04/28/2013 17:39:23</publishTime>
+    </File>
+    <File Include="assets/js/knockout-2.2.1.js">
+      <publishTime>04/28/2013 17:39:23</publishTime>
+    </File>
+    <File Include="assets/js/seemok.core.js">
+      <publishTime>04/28/2013 17:45:36</publishTime>
+    </File>
+    <File Include="assets/js/seemok.form.js">
+      <publishTime>04/28/2013 17:45:36</publishTime>
+    </File>
+    <File Include="assets/js/telerik.common.min.js">
+      <publishTime>04/28/2013 17:39:23</publishTime>
+    </File>
+    <File Include="assets/js/telerik.grid.editing.min.js">
+      <publishTime>04/28/2013 17:39:23</publishTime>
+    </File>
+    <File Include="assets/js/telerik.grid.filtering.min.js">
+      <publishTime>04/28/2013 17:39:23</publishTime>
+    </File>
+    <File Include="assets/js/telerik.grid.grouping.min.js">
+      <publishTime>04/28/2013 17:39:23</publishTime>
+    </File>
+    <File Include="assets/js/telerik.grid.min.js">
+      <publishTime>04/28/2013 17:39:23</publishTime>
+    </File>
+    <File Include="assets/js/telerik.grid.reordering.min.js">
+      <publishTime>04/28/2013 17:39:23</publishTime>
+    </File>
+    <File Include="assets/js/telerik.grid.resizing.min.js">
+      <publishTime>04/28/2013 17:39:23</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>04/22/2013 05:06:37</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/19/2012 10:59:52</publishTime>
+    </File>
+    <File Include="bin/Seemok.dll">
+      <publishTime>04/28/2013 18:02:06</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/05/2011 15:45:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/05/2011 17:42:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.Providers.dll">
+      <publishTime>04/22/2013 05:06:41</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/05/2011 15:45:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>01/05/2011 15:45:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>01/05/2011 15:45:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>01/05/2011 15:45:38</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>04/22/2013 05:06:36</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>04/22/2013 05:06:45</publishTime>
+    </File>
+    <File Include="Views/Home/Dashboard.cshtml">
+      <publishTime>04/28/2013 17:43:59</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>04/28/2013 17:41:08</publishTime>
+    </File>
+    <File Include="Views/Home/Service.cshtml">
+      <publishTime>04/28/2013 17:59:54</publishTime>
+    </File>
+    <File Include="Views/Home/Settings.cshtml">
+      <publishTime>04/28/2013 17:53:33</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>04/22/2013 05:15:05</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>04/28/2013 17:45:36</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>04/22/2013 05:06:36</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>04/22/2013 05:06:36</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/28/2013 18:02:06</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
