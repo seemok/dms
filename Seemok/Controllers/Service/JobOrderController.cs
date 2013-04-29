@@ -12,6 +12,5 @@ namespace Seemok.Controllers.Service
         {
             return View();
         }
-
     }
 }

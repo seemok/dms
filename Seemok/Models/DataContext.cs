@@ -9,5 +9,6 @@ namespace Seemok.Models
     public class DataContext : DbContext
     {
         public IDbSet<Menu> Menus { get; set; }
+        public IDbSet<JobOrder> JobOrders { get; set; }
     }
 }
