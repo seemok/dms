@@ -1,0 +1,28 @@
+﻿@using Telerik.Web.Mvc.UI
+@using Seemok.Models
+<div class="form-list">
+    @Forms.Toolbar("Proses Faktur", new Button { Id = "btnAloc", Caption = "Alokasi Mekanik" }, new Button { Id = "btnFinish", Caption = "Finish Job" }, new Button { Id = "btnInvoice", Caption = "Proses Invoice" })
+    @Forms.Subtitle("List Surat Perintah Kerja (SPK)")
+    @(Html.Telerik().Grid<JobOrder>()
+     .Name("TGrid")
+     .DataBinding(dataBinding => dataBinding.Ajax().Select("JobOrderList", "GridApi", new { Area = "" }))
+     .Columns(columns =>
+     {
+         columns.Bound(o => o.JobOrderNo).Title("No SPK").Width(80);
+         columns.Bound(o => o.JobOrderDate).Title("Tgl SPK").Width(90).Format("{0: dd-MMM-yyyy}");
+         columns.Bound(o => o.VehicleID).Title("Jenis Kendaraan").Width(180);
+         columns.Bound(o => o.JobOrderCode).Title("Jenis Pekerjaan").Width(120);
+         columns.Bound(o => o.Odometer).Title("Odometer").Width(120);
+         columns.Bound(o => o.CustomerBill).Title("Pembayar").Width(120);
+         columns.Bound(o => o.Status).Title("Status").Width(90);
+     })
+     .ClientEvents(evt => evt.OnRowSelected("$.rowChanged"))
+     .KeyboardNavigation()
+     .Selectable()
+     .Sortable()
+     .Filterable()
+     .ColumnContextMenu()
+     .Pageable(p => p.PageSize(15)))
+</div>
+
+
