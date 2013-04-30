@@ -147,7 +147,6 @@
     <Content Include="assets\js\apps\assesment.js" />
     <Content Include="assets\js\apps\branch.js" />
     <Content Include="assets\js\apps\riskcomp.js" />
-    <Content Include="assets\js\apps\risktype.js" />
     <Content Include="assets\js\apps\settings.js" />
     <Content Include="assets\js\jquery-1.7.2.min.js" />
     <Content Include="assets\js\jquery-1.9.1.min.js" />
