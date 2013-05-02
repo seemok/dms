@@ -1,5 +1,5 @@
 ﻿@using Seemok.Models
-@Forms.Toolbar("Input SPK", new Button { Id = "btnNew", Caption = "New" }, new button { id = "btnAllocation mechanic", caption = "allocation mechanic"}, new Button { Id = "btnBrowse", Caption = "Browse" }, new Button { Id = "btnSave", Caption = "Save" })
+@*@Forms.Toolbar("Input SPK", new Button { Id = "btnNew", Caption = "New" }, new Button { Id = "btnAllocation mechanic", Caption = "allocation mechanic" }, new Button { Id = "btnBrowse", Caption = "Browse" }, new Button { Id = "btnSave", Caption = "Save" })
 @Forms.Subtitle("Informasi Umum")
 @Forms.TextBox("JobOrderNo", "No SPK")
 @Forms.TextBox("JobOrderDate", "Tgl SPK")
@@ -14,12 +14,179 @@
 @Forms.TextBox("CustAddress1", "Alamat")
 @Forms.TextBox("CustAddress2", "")
 @Forms.TextBox("CustAddress3", "")
-@Forms.TextBox("CustAddress4", "")
+@Forms.TextBox("CustAddress4", "")*@
+<style>
+    .span1 {width: 100px !important;}
+    .span2 {width: 200px !important;}
+    .span3 {width: 300px !important;}
+    .span4 {width: 400px !important;}
+    div.input-prepend > input, div.input-append > input { padding: 4px !important;}
+</style>
+@Forms.Toolbar("Input SPK", new Button { Id = "btnNew", Caption = "New" }, new Button { Id = "btnBrowse", Caption = "Browse" }, new Button { Id = "btnSave", Caption = "Save" }, new Button { Id = "btnPrint", Caption = "Print" })
+
 @Forms.Subtitle("Summary")
+<div class="input-prepend">
+    <span class="add-on">No</span>
+    <input class="span2" type="text" placeholder="JOB0001" readonly="readonly">
+</div>
+<div class="input-append">
+    <span class="add-on">Biaya</span>
+    <input class="span3" type="text" id="biaya" data-content="Detail Biaya" rel="popover" data-original-title="Detail" data-placement="bottom" readonly="readonly" placeholder="2.000.000,00">
+</div>
 
+<div class="input-prepend">
+    <span class="add-on">Status</span>
+    <select class="span1" id="status">
+        <option value="0">Open</option>
+        <option value="1">Working</option>
+        <option value="2">Finish</option>
+    </select>
+    <button type="button" class="btn" id="invoice" disabled="disabled">Proses Faktur</button>
+</div>
+<script>
+    $('#biaya').mouseenter(function () {
+        $(this).popover('show');
+    });
 
+    $('#biaya').mouseleave(function () {
+        $(this).popover('hide');
+    });
 
+    $('#status').change(function () {
+        if ($(this).val() == 2) {
+            $('#invoice').removeAttr('disabled');
+        }
+    });
+</script>
 
+@Forms.Subtitle("Informasi Umum")
+<div class="control-group">
+    <label class="control-label">Nama Pelangan</label>
+    <div class="controls">
+        <div class="input-prepend">
+            <button class="btn">O</button>
+            <input type="text" class="span1" readonly="readonly" placeholder="Kode">
+        </div>
+        <div class="input-append">
+            <input type="text" class="span3" readonly="readonly" placeholder="Nama Pelanggan">
+            <button class="btn">Detail</button>
+        </div>
+    </div>
+</div>
 
+<div class="control-group">
+    <label class="control-label">Kendaraan</label>
+    <div class="controls">
+        <div class="input-prepend">
+            <button class="btn">O</button>
+            <input type="text" class="span1" readonly="readonly" placeholder="No Polisi">
+        </div>
+        <div class="input-append">
+            <input type="text" class="span3" readonly="readonly" placeholder="No Rangka - No Mesin">
+            <button class="btn">Detail</button>
+        </div>
+    </div>
+</div>
 
+<div class="control-group">
+    <label class="control-label">Pembayar</label>
+    <div class="controls">
+        <div class="input-prepend">
+            <button class="btn">O</button>
+            <input type="text" class="span1" readonly="readonly" placeholder="Kode">
+        </div>
+        <div class="input-append">
+            <input type="text" class="span3" readonly="readonly" placeholder="Nama Pembayar">
+            <button class="btn">Detail</button>
+        </div>
+    </div>
+</div>
+
+@Forms.Subtitle("Informasi Pengerjaan")
+
+<div class="control-group">
+    <label class="control-label">Jenis Pekerjaan</label>
+    <div class="controls">
+        <div class="input-prepend">
+            <button class="btn">O</button>
+            <input type="text" class="span1" readonly="readonly" placeholder="Kode">
+        </div>
+        <div class="input-append">
+            <input type="text" class="span3" readonly="readonly" placeholder="Pekerjaan">
+            <button class="btn">Detail</button>
+        </div>
+    </div>
+</div>
+
+<div class="control-group">
+    <label class="control-label">Foreman</label>
+    <div class="controls">
+        <div class="input-prepend">
+            <button class="btn">O</button>
+            <input type="text" class="span1" readonly="readonly" placeholder="Kode">
+        </div>
+        <div class="input-append">
+            <input type="text" class="span3" readonly="readonly" placeholder="Nama Foreman">
+        </div>
+    </div>
+</div>
+
+<div class="control-group">
+    <label class="control-label"></label>
+    <textarea placeholder="Pesan kepada mekanik"></textarea>
+</div>
+
+@Forms.Subtitle("Pekerjaan Dan Sparepart")
+
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th>Action</th>
+            <th>
+                <div class="input-prepend">
+                    <button class="btn">O</button>
+                    <input type="text" class="span1" readonly="readonly" placeholder="Job/Par">
+                </div>
+            </th>
+            <th>Name</th>
+            <th><input type="text" class="span1" placeholder="Nilai" /></th>
+            <th>Harga</th>
+            <th><input type="text" class="span1" placeholder="Disc" /></th>
+            <th>Biaya</th>
+            <th>
+                <div class="input-prepend">
+                    <button class="btn">O</button>
+                    <input type="text" class="span1" readonly="readonly" placeholder="Mekanik">
+                </div>
+            </th>
+            <th>Status</th>
+            <th><button class="btn">+</button></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Edit/Delete</td>
+            <td>JOB1</td>
+            <td>Ganti Oli</td>
+            <td>1</td>
+            <td>10.000</td>
+            <th>10%</th>
+            <th>9.000</th>
+            <th>Mekanik 1</th>
+            <th>Finish</th>
+        </tr>
+        <tr>
+            <td>Edit/Delete</td>
+            <td>OLI</td>
+            <td>OLI 1</td>
+            <td>1</td>
+            <td>10.000</td>
+            <th>10%</th>
+            <th>9.000</th>
+            <th></th>
+            <th>Tersuplay</th>
+            <th></th>
+        </tr>
+    </tbody>
+</table>
 
