@@ -106,6 +106,7 @@
     <Compile Include="Controllers\Service\CorrectionController.cs" />
     <Compile Include="Controllers\Service\InvoiceController.cs" />
     <Compile Include="Controllers\Service\JobOrderController.cs" />
+    <Compile Include="Controllers\Service\WorkingController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -148,6 +149,7 @@
     <Content Include="assets\js\apps\branch.js" />
     <Content Include="assets\js\apps\riskcomp.js" />
     <Content Include="assets\js\apps\settings.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\jquery-1.7.2.min.js" />
     <Content Include="assets\js\jquery-1.9.1.min.js" />
     <Content Include="assets\js\jquery.hashable.js" />
@@ -202,6 +204,7 @@
     <Content Include="Views\Service\JobOrder\Index.cshtml" />
     <Content Include="Views\Service\Invoice\Index.cshtml" />
     <Content Include="Views\Service\Correction\Index.cshtml" />
+    <Content Include="Views\Service\Working\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

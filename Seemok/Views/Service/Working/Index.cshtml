@@ -1,0 +1,71 @@
+﻿<style>
+    .span1 {width: 100px !important;}
+    .span2 {width: 200px !important;}
+    .span3 {width: 300px !important;}
+    .span4 {width: 400px !important;}
+    div.input-prepend > input, div.input-append > input { padding: 4px !important;}
+</style>
+<script>
+    $('#btnFaktur').click(function () {
+        $('.svinvoice').click();
+    });
+</script>
+
+@Forms.Toolbar("Alokasi Mekanik", new Seemok.Models.Button { Id = "btnFaktur", Caption = "Faktur" })
+
+@Forms.Subtitle("Pekerjaan Dan Sparepart")
+
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th>Action</th>
+            <th>
+                <div class="input-prepend">
+                    <button class="btn">O</button>
+                    <input type="text" class="span1" readonly="readonly" placeholder="Job/Par">
+                </div>
+            </th>
+            <th>Name</th>
+            <th>
+                <input type="text" class="span1" placeholder="Nilai" /></th>
+            <th>Harga</th>
+            <th>
+                <input type="text" class="span1" placeholder="Disc" /></th>
+            <th>Biaya</th>
+            <th>
+                <div class="input-prepend">
+                    <button class="btn">O</button>
+                    <input type="text" class="span1" readonly="readonly" placeholder="Mekanik">
+                </div>
+            </th>
+            <th>Status</th>
+            <th>
+                <button class="btn">+</button></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Edit/Delete</td>
+            <td>JOB1</td>
+            <td>Ganti Oli</td>
+            <td>1</td>
+            <td>10.000</td>
+            <th>10%</th>
+            <th>9.000</th>
+            <th>Mekanik 1</th>
+            <th>Finish</th>
+        </tr>
+        <tr>
+            <td>Edit/Delete</td>
+            <td>OLI</td>
+            <td>OLI 1</td>
+            <td>1</td>
+            <td>10.000</td>
+            <th>10%</th>
+            <th>9.000</th>
+            <th></th>
+            <th>Tersuplay</th>
+            <th></th>
+        </tr>
+    </tbody>
+</table>
