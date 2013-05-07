@@ -21,6 +21,7 @@
     .span3 {width: 300px !important;}
     .span4 {width: 400px !important;}
     div.input-prepend > input, div.input-append > input { padding: 4px !important;}
+<<<<<<< HEAD
 
     ol.progtrckr { margin: 0; padding: 0;list-style-type: none;}
     ol.progtrckr li { display: inline-block; text-align: center; line-height: 3em;}
@@ -69,6 +70,10 @@
     new Button { Id = "btnSave", Caption = "Save" }, 
     new Button { Id = "btnPrint", Caption = "Print" },
     new Button { Id = "btnAloc", Caption = "Pengerjaan & Alokasi" })
+=======
+</style>
+@Forms.Toolbar("Input SPK", new Button { Id = "btnNew", Caption = "New" }, new Button { Id = "btnBrowse", Caption = "Browse" }, new Button { Id = "btnSave", Caption = "Save" }, new Button { Id = "btnPrint", Caption = "Print" })
+>>>>>>> 4a0a22397c6190456d8d256bc23d3e29e6226388
 
 @Forms.Subtitle("Summary")
 <div class="input-prepend">
@@ -79,6 +84,7 @@
     <span class="add-on">Biaya</span>
     <input class="span3" type="text" id="biaya" data-content="Detail Biaya" rel="popover" data-original-title="Detail" data-placement="bottom" readonly="readonly" placeholder="2.000.000,00">
 </div>
+<<<<<<< HEAD
 <br />
 <hr />
 <ol class="progtrckr" data-progtrckr-steps="5">
@@ -88,6 +94,18 @@
     <li class="progtrckr-todo">Faktur</li>
     <li class="progtrckr-todo">Printed</li>
 </ol>
+=======
+
+<div class="input-prepend">
+    <span class="add-on">Status</span>
+    <select class="span1" id="status">
+        <option value="0">Open</option>
+        <option value="1">Working</option>
+        <option value="2">Finish</option>
+    </select>
+    <button type="button" class="btn" id="invoice" disabled="disabled">Proses Faktur</button>
+</div>
+>>>>>>> 4a0a22397c6190456d8d256bc23d3e29e6226388
 <script>
     $('#biaya').mouseenter(function () {
         $(this).popover('show');
@@ -102,6 +120,7 @@
             $('#invoice').removeAttr('disabled');
         }
     });
+<<<<<<< HEAD
 
     $('#btnAloc').click(function () {
         $('.svworking').click();
@@ -112,6 +131,8 @@
             $(this).attr("data-progtrckr-steps", $(this).children("li").length);
         });
     })
+=======
+>>>>>>> 4a0a22397c6190456d8d256bc23d3e29e6226388
 </script>
 
 @Forms.Subtitle("Informasi Umum")
@@ -187,6 +208,7 @@
 </div>
 
 <div class="control-group">
+<<<<<<< HEAD
     <label class="control-label">Mekanik</label>
     <div class="controls">
         <div class="input-prepend">
@@ -203,5 +225,63 @@
     <label class="control-label"></label>
     <textarea placeholder="Pesan kepada mekanik"></textarea>
 </div>
+=======
+    <label class="control-label"></label>
+    <textarea placeholder="Pesan kepada mekanik"></textarea>
+</div>
 
+@Forms.Subtitle("Pekerjaan Dan Sparepart")
+>>>>>>> 4a0a22397c6190456d8d256bc23d3e29e6226388
+
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th>Action</th>
+            <th>
+                <div class="input-prepend">
+                    <button class="btn">O</button>
+                    <input type="text" class="span1" readonly="readonly" placeholder="Job/Par">
+                </div>
+            </th>
+            <th>Name</th>
+            <th><input type="text" class="span1" placeholder="Nilai" /></th>
+            <th>Harga</th>
+            <th><input type="text" class="span1" placeholder="Disc" /></th>
+            <th>Biaya</th>
+            <th>
+                <div class="input-prepend">
+                    <button class="btn">O</button>
+                    <input type="text" class="span1" readonly="readonly" placeholder="Mekanik">
+                </div>
+            </th>
+            <th>Status</th>
+            <th><button class="btn">+</button></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Edit/Delete</td>
+            <td>JOB1</td>
+            <td>Ganti Oli</td>
+            <td>1</td>
+            <td>10.000</td>
+            <th>10%</th>
+            <th>9.000</th>
+            <th>Mekanik 1</th>
+            <th>Finish</th>
+        </tr>
+        <tr>
+            <td>Edit/Delete</td>
+            <td>OLI</td>
+            <td>OLI 1</td>
+            <td>1</td>
+            <td>10.000</td>
+            <th>10%</th>
+            <th>9.000</th>
+            <th></th>
+            <th>Tersuplay</th>
+            <th></th>
+        </tr>
+    </tbody>
+</table>
 
