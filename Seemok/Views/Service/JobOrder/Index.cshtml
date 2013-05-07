@@ -16,133 +16,53 @@
 @Forms.TextBox("CustAddress3", "")
 @Forms.TextBox("CustAddress4", "")*@
 <style>
-    .span1
+    .span1 { width: 100px !important; }
+    .span2 { width: 200px !important; }
+    .span3 { width: 300px !important; }
+    .span4 { width: 400px !important; }
+    div.input-prepend > input, div.input-append > input  { padding: 4px !important; }
+
+ol.progtrckr { margin: 0; padding: 0; list-style-type: none; }
+ol.progtrckr li { display: inline-block; text-align: center; line-height: 3em;}
+ol.progtrckr[data-progtrckr-steps="2"] li { width: 49%; }
+ol.progtrckr[data-progtrckr-steps="3"] li { width: 33%; }
+ol.progtrckr[data-progtrckr-steps="4"] li { width: 24%; }
+ol.progtrckr[data-progtrckr-steps="5"] li { width: 19%; }
+ol.progtrckr[data-progtrckr-steps="6"] li { width: 16%; }
+ol.progtrckr[data-progtrckr-steps="7"] li { width: 14%; }
+ol.progtrckr[data-progtrckr-steps="8"] li { width: 12%; }
+ol.progtrckr[data-progtrckr-steps="9"] li { width: 11%; }
+
+ol.progtrckr li.progtrckr-done { color: black; border-bottom: 4px solid black; }
+ol.progtrckr li.progtrckr-todo { color: silver; border-bottom: 4px solid silver;}
+
+ol.progtrckr li:after { content: "\00a0\00a0";}
+ol.progtrckr li:before {position: relative; bottom: -2.5em;float: left;left: 50%;line-height: 1em;}
+
+/**style icon*/
+
+ol.progtrckr li.progtrckr-done:before
     {
-        width: 100px !important;
+        content: "\2713";
+        color: white;
+        background-color: black;
+        height: 1.2em;
+        width: 1.2em;
+        line-height: 1.2em;
+        border: none;
+        -moz-border-radius: 1.2em;
+        -webkit-border-radius: 1.2em;
+        border-radius: 1.2em;
     }
 
-    .span2
+ol.progtrckr li.progtrckr-todo:before 
     {
-        width: 200px !important;
+        content: "\039F";
+        color: silver;
+        background-color: white;
+        font-size: 1.5em;
+        bottom: -1.6em;
     }
-
-    .span3
-    {
-        width: 300px !important;
-    }
-
-    .span4
-    {
-        width: 400px !important;
-    }
-
-    div.input-prepend > input, div.input-append > input
-    {
-        padding: 4px !important;
-    }
-
-    ol.progtrckr
-    {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-    }
-
-        ol.progtrckr li
-        {
-            display: inline-block;
-            text-align: center;
-            line-height: 3em;
-        }
-
-        ol.progtrckr[data-progtrckr-steps="2"] li
-        {
-            width: 49%;
-        }
-
-        ol.progtrckr[data-progtrckr-steps="3"] li
-        {
-            width: 33%;
-        }
-
-        ol.progtrckr[data-progtrckr-steps="4"] li
-        {
-            width: 24%;
-        }
-
-        ol.progtrckr[data-progtrckr-steps="5"] li
-        {
-            width: 19%;
-        }
-
-        ol.progtrckr[data-progtrckr-steps="6"] li
-        {
-            width: 16%;
-        }
-
-        ol.progtrckr[data-progtrckr-steps="7"] li
-        {
-            width: 14%;
-        }
-
-        ol.progtrckr[data-progtrckr-steps="8"] li
-        {
-            width: 12%;
-        }
-
-        ol.progtrckr[data-progtrckr-steps="9"] li
-        {
-            width: 11%;
-        }
-
-        ol.progtrckr li.progtrckr-done
-        {
-            color: black;
-            border-bottom: 4px solid #413e3e;
-        }
-
-        ol.progtrckr li.progtrckr-todo
-        {
-            color: silver;
-            border-bottom: 4px solid #808080;
-        }
-
-        ol.progtrckr li:after
-        {
-            content: "\00a0\00a0";
-        }
-
-        ol.progtrckr li:before
-        {
-            position: relative;
-            bottom: -2.5em;
-            float: left;
-            left: 50%;
-            line-height: 1em;
-        }
-
-        ol.progtrckr li.progtrckr-done:before
-        {
-            content: "\2713";
-            color: white;
-            background-color: #413e3e;
-            height: 1.2em;
-            width: 1.2em;
-            line-height: 1.2em;
-            border: none;
-            -moz-border-radius: 1.2em;
-            -webkit-border-radius: 1.2em;
-            border-radius: 1.2em;
-        }
-
-        ol.progtrckr li.progtrckr-todo:before
-        {
-            content: "\039F";
-            color: silver;
-            background-color: white;
-            font-size: 1.5em;
-            bottom: -1.6em;
-        }
 </style>
 @Forms.Toolbar("Input SPK",
     new Button { Id = "btnNew", Caption = "New" },
@@ -150,6 +70,7 @@
     new Button { Id = "btnSave", Caption = "Save" },
     new Button { Id = "btnPrint", Caption = "Print" },
     new Button { Id = "btnAloc", Caption = "Pengerjaan & Alokasi" })
+
 @Forms.Subtitle("Summary")
 <div class="input-prepend">
     <span class="add-on">No</span>
@@ -159,6 +80,7 @@
     <span class="add-on">Biaya</span>
     <input class="span3" type="text" id="biaya" data-content="Detail Biaya" rel="popover" data-original-title="Detail" data-placement="bottom" readonly="readonly" placeholder="2.000.000,00">
 </div>
+
 <br />
 <hr />
 <ol class="progtrckr" data-progtrckr-steps="5">
@@ -284,4 +206,3 @@
     <label class="control-label"></label>
     <textarea placeholder="Pesan kepada mekanik"></textarea>
 </div>
-
